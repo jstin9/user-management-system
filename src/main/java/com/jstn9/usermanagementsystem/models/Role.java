@@ -2,6 +2,7 @@ package com.jstn9.usermanagementsystem.models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.util.Set;
@@ -15,6 +16,7 @@ public class Role {
     private Long id;
 
     @Column(unique = true, nullable = false)
+    @NotBlank(message = "Name is required")
     private String name;
 
     @ManyToMany(fetch = FetchType.LAZY)

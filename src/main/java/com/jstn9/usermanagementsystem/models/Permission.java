@@ -1,6 +1,7 @@
 package com.jstn9.usermanagementsystem.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
@@ -12,6 +13,7 @@ public class Permission {
     private Long id;
 
     @Column(unique = true, nullable = false)
+    @NotBlank(message = "Name is required")
     private String name;
 
 
